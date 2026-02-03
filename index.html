@@ -1,163 +1,149 @@
-<!doctype html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UEM — Cronograma com Seminários — 2025</title>
-  <style>
-    :root {
-      --text: #111827;
-      --muted: #6b7280;
-      --line: #111827;
-      --gray: #f3f4f6;
-      --zebra: #f8fafc;
-      --warnbg: #ecfdf5;
-      --warnbd: #10b981;
-      --evalbg: #fee2e2;
-      --eval: #991b1b;
-      --uem-blue: #1e40af;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      color: var(--text);
-      background: #f3f4f6;
-      line-height: 1.5;
-      padding: 20px;
-    }
-    .page { 
-      max-width: 1000px; 
-      margin: 0 auto; 
-      padding: 30px; 
-      background: #fff; 
-      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-      border-radius: 8px;
-    }
-    header { 
-      border: 2px solid var(--line); 
-      padding: 20px; 
-      border-radius: 8px; 
-      margin-bottom: 25px; 
-    }
-    h1 { font-size: 1.4rem; text-align: center; margin: 0; text-transform: uppercase; }
-    .meta-info { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px; font-size: 0.9rem; }
-    
-    table { width: 100%; border-collapse: collapse; border: 2px solid var(--line); margin-bottom: 25px; }
-    th, td { border: 1px solid var(--line); padding: 12px; font-size: 0.85rem; text-align: left; }
-    th { background: var(--gray); text-transform: uppercase; font-weight: 800; }
-    .eval-row td { background: var(--evalbg) !important; color: var(--eval); font-weight: bold; }
-    tbody tr:nth-child(even) { background: var(--zebra); }
-
-    .section-title {
-      font-weight: 800;
-      text-transform: uppercase;
-      font-size: 1rem;
-      margin: 25px 0 10px;
-      display: block;
-      color: var(--uem-blue);
-      border-bottom: 2px solid var(--uem-blue);
-    }
-
-    .criteria-content {
-      background: #f9fafb;
-      border: 1px solid #d1d5db;
-      padding: 20px;
-      border-radius: 8px;
-      font-size: 0.85rem;
-    }
-    .seminar-rule {
-      background: #eff6ff;
-      border-left: 4px solid var(--uem-blue);
-      padding: 10px;
-      margin-top: 10px;
-    }
-    .footer-sign { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; font-size: 0.85rem; }
-    .line-sig { border-top: 1px solid var(--line); margin-top: 40px; text-align: center; padding-top: 5px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronograma Anatomia Humana - UEM</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid #004a80;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+        }
+        h1 { color: #004a80; margin: 0; font-size: 24px; }
+        h2 { color: #005696; border-left: 5px solid #004a80; padding-left: 10px; margin-top: 30px; }
+        .info-professor {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #555;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #004a80;
+            color: white;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .avaliação {
+            background-color: #eef6ff !important;
+            font-weight: bold;
+            color: #d32f2f;
+        }
+        .criterios-box {
+            background: #f1f1f1;
+            padding: 20px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .criterios-box ul { padding-left: 20px; }
+        .footer-date {
+            margin-top: 40px;
+            text-align: right;
+            font-style: italic;
+        }
+        @media print {
+            body { background: none; padding: 0; }
+            .container { box-shadow: none; width: 100%; }
+        }
+    </style>
 </head>
 <body>
-  <div class="page">
+
+<div class="container">
     <header>
-      <p style="text-align:center; font-weight:bold; margin:0 0 5px 0; font-size:0.8rem;">UNIVERSIDADE ESTADUAL DE MARINGÁ (UEM)</p>
-      <h1>Cronograma de Anatomia Aplicada — 2025</h1>
-      <div class="meta-info">
-        <div><strong>Docente:</strong> Profª Dra. Cláudia Pinheiro</div>
-        <div><strong>Carga Horária:</strong> 68.0h</div>
-        <div><strong>Período:</strong> 07/04/2025 a 11/08/2025</div>
-        <div><strong>Turma:</strong> 2 (Noite)</div>
-      </div>
+        <h1>UNIVERSIDADE ESTADUAL DE MARINGÁ</h1>
+        <p>Departamento de Ciências Morfológicas</p>
     </header>
 
-    <span class="section-title">Cronograma e Avaliações</span>
+    <div class="info-professor">
+        <div>
+            Disciplina: Anatomia Humana Aplicada à Ed. Física<br>
+            Docente: Profª Dra. Cláudia Pinheiro
+        </div>
+        <div style="text-align: right;">
+            Ano Letivo: 2025<br>
+            Carga Horária: 68.0h
+        </div>
+    </div>
+
+    <h2>1. Conteúdo Programático</h2>
     <table>
-      <thead>
-        <tr>
-          <th style="width: 12%;">Data</th>
-          <th>Conteúdo Programático</th>
-          <th>Atividade / Verificação</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>07/04</td><td>Introdução à Anatomia</td><td>Discussão: Anatomia na Ed. Física.</td></tr>
-        <tr><td>14/04</td><td>Planos e Eixos</td><td>Prática com massa de modelar.</td></tr>
-        <tr><td>21/04</td><td>Sistema Esquelético</td><td>Identificação funcional dos ossos.</td></tr>
-        <tr><td>28/04</td><td>Sistema Articular</td><td>Análise de gestos e amplitude.</td></tr>
-        <tr><td>05/05</td><td>Sistema Muscular I</td><td>Mapeamento de grupos musculares.</td></tr>
-        <tr><td>12/05</td><td>Sistema Muscular II</td><td>Análise de contração e performance.</td></tr>
-        <tr class="eval-row">
-          <td>19/05</td>
-          <td>1ª AVALIAÇÃO PERIÓDICA</td>
-          <td>Prova Teórica (5,0) + Prova Prática (5,0).</td>
-        </tr>
-        <tr><td>26/05</td><td>Membros Superiores</td><td>Aplicação funcional em esportes.</td></tr>
-        <tr><td>02/06</td><td>Membros Inferiores</td><td>Análise de locomoção e salto.</td></tr>
-        <tr><td>09/06</td><td>Cadeias Musculares</td><td>Movimentos complexos e lesões.</td></tr>
-        <tr><td>16/06</td><td>Sistema Nervoso I</td><td>Controle neural do movimento.</td></tr>
-        <tr><td>23/06</td><td>Sistema Nervoso II</td><td>Medula, reflexos e postura.</td></tr>
-        <tr class="eval-row">
-          <td>30/06</td>
-          <td>2ª AVALIAÇÃO PERIÓDICA</td>
-          <td><strong>Seminário (2,0)</strong> + Teórica (5,0) + Prática (3,0).</td>
-        </tr>
-        <tr><td>07/07</td><td>Encéfalo</td><td>Coordenação e equilíbrio esportivo.</td></tr>
-        <tr><td>14/07</td><td>Propriocepção</td><td>Discussão: Aprendizagem motora.</td></tr>
-        <tr><td>21/07</td><td>Sist. Cardiovascular</td><td>Resposta cardiovascular ao exercício.</td></tr>
-        <tr><td>28/07</td><td>Sist. Respiratório</td><td>Ventilação e desempenho físico.</td></tr>
-        <tr><td>04/08</td><td>Integração Sistêmica</td><td>Digestório, Urinário e Genital no esforço.</td></tr>
-        <tr class="eval-row">
-          <td>11/08</td>
-          <td>3ª AVALIAÇÃO PERIÓDICA</td>
-          <td><strong>Seminário (2,0)</strong> + Teórica (5,0) + Prática (3,0).</td>
-        </tr>
-      </tbody>
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Conteúdo Programático</th>
+                <th>Atividade / Avaliação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>07/04</td><td>Introdução à Anatomia Humana</td><td>Nomenclatura, posição anatômica e variações.</td></tr>
+            <tr><td>14/04</td><td>Planos e Eixos de Secção</td><td>Delimitação corporal e eixos de movimento.</td></tr>
+            <tr><td>21/04</td><td>Osteologia: Axial e Apendicular</td><td>Descrição morfológica do esqueleto e acidentes ósseos.</td></tr>
+            <tr><td>28/04</td><td>Artrologia: Articulações</td><td>Classificação morfológica e funcional das articulações.</td></tr>
+            <tr><td>05/05</td><td>Sistema Muscular: Princípios Gerais</td><td>Estrutura macroscópica e dinâmica da contração muscular.</td></tr>
+            <tr><td>12/05</td><td>Sistema Muscular: MMSS</td><td>Anatomia regional do ombro, braço e antebraço.</td></tr>
+            <tr class="avaliação"><td>19/05</td><td>1ª AVALIAÇÃO PERIÓDICA</td><td>Prática (Aparelho Locomotor) + Teórica.</td></tr>
+            <tr><td>26/05</td><td>Sistema Muscular: MMII</td><td>Anatomia regional do quadril, coxa, perna e pé.</td></tr>
+            <tr><td>02/06</td><td>Músculos do Tórax, Abdome e Dorso</td><td>Morfologia das paredes do tronco e assoalho pélvico.</td></tr>
+            <tr><td>09/06</td><td>Sistema Nervoso: Introdução</td><td>Anatomia macroscópica do encéfalo e medula espinal.</td></tr>
+            <tr><td>16/06</td><td>Sistema Nervoso Periférico</td><td>Morfologia dos nervos e plexos braquial e lombossacral.</td></tr>
+            <tr><td>23/06</td><td>Tronco Encefálico e Cerebelo</td><td>Estruturas de controle motor e equilíbrio.</td></tr>
+            <tr class="avaliação"><td>30/06</td><td>2ª AVALIAÇÃO PERIÓDICA</td><td>Prática (Muscular/Nervoso) + Teórica.</td></tr>
+            <tr><td>07/07</td><td>Vias Aferentes Somáticas</td><td>Proprioceptores (Fusos e Órgãos Tendinosos).</td></tr>
+            <tr><td>14/07</td><td>Sistema Cardiovascular</td><td>Morfologia cardíaca e sistema vascular periférico.</td></tr>
+            <tr><td>21/07</td><td>Sistema Respiratório</td><td>Anatomia das vias aéreas e mecânica respiratória.</td></tr>
+            <tr><td>28/07</td><td>Sistema Urogenital</td><td>Morfologia dos órgãos urinários e genitais.</td></tr>
+            <tr><td>04/08</td><td>Sistema Digestório</td><td>Morfologia do canal alimentar e glândulas anexas.</td></tr>
+            <tr class="avaliação"><td>11/08</td><td>3ª AVALIAÇÃO PERIÓDICA</td><td>Prática (Sistêmica) + Teórica (Nervoso/Cardio/Resp/UG/Dig).</td></tr>
+        </tbody>
     </table>
 
-    <span class="section-title">Critérios de Avaliação (Normas UEM)</span>
-    <div class="criteria-content">
-      <p><strong>• Verificação da Aprendizagem:</strong> Conforme o sistema acadêmico, as notas são divididas em provas teóricas, práticas e seminários.</p>
-      
-      <div class="seminar-rule">
-        <strong>• Composição do Seminário Teórico-Prático (Valor 2,0):</strong><br>
-        A nota individual de cada aluno no seminário será a soma das médias:
+    <h2>2. Critérios de Avaliação da Aprendizagem</h2>
+    <div class="criterios-box">
+        <p><strong>Verificação da Aprendizagem — Turma: 2</strong></p>
         <ul>
-          <li>Autoavaliação do próprio acadêmico (0,0 a 1,0);</li>
-          <li>Avaliação por 2 estudantes que assistiram ao seminário (0,0 a 1,0);</li>
-          <li>Avaliação final atribuída pelo professor (0,0 a 1,0).</li>
+            <li><strong>1ª AVALIAÇÃO:</strong> Prova teórica (0,0 a 5,0) e Prova prática (0,0 a 5,0).</li>
+            <li><strong>2ª AVALIAÇÃO:</strong> Seminário teórico-prático (0,0 a 2,0); Prova teórica (0,0 a 5,0); Prova prática (0,0 a 3,0).</li>
+            <li><strong>3ª AVALIAÇÃO:</strong> Seminário teórico-prático (0,0 a 2,0); Prova teórica (0,0 a 5,0); Prova prática (0,0 a 3,0).</li>
         </ul>
-        A média dessas notas resultará no valor final de até 2,0 pontos para compor a nota periódica.
-      </div>
-
-      <p style="margin-top:15px;"><strong>• Exame Final:</strong> Abrangerá todo o programa da disciplina, consistindo em prova teórica (0,0 a 7,0) e prova prática (0,0 a 3,0).</p>
-      
-      <p><strong>• Justificativas:</strong> Acadêmicos ausentes com justificativa legal terão os pesos das provas teórica e prática alterados para 6,0 e 4,0, respectivamente.</p>
+        <p><strong>Composição da Nota de Seminário:</strong> Média aritmética da autoavaliação (1,0) + avaliação por estudantes assistentes (1,0) + avaliação docente (1,0).</p>
+        <p><strong>Exame Final:</strong> Abrangerá todo o programa com Prova teórica (7,0) e Prova prática (3,0).</p>
+        <p><em>* Avaliações teóricas e práticas ocorrem no mesmo dia letivo.</em></p>
     </div>
 
-    <div class="footer-sign">
-      <div>Maringá, ____/____/2025</div>
-      <div class="line-sig">Profª Dra. Cláudia Pinheiro<br><small>UEM — Departamento de Ciências Morfológicas</small></div>
+    <div class="footer-date">
+        Maringá, ____/____/2025
     </div>
-  </div>
+</div>
+
 </body>
 </html>
-
